@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import AddedFeature from "./AddedFeature";
-import { removeItem } from "../actions";
+import { removeItem, removeFeaturePrice } from "../actions";
 
 const AddedFeatures = props => {
   console.log("props features: ", props.features);
@@ -17,6 +17,7 @@ const AddedFeatures = props => {
               key={item.id}
               feature={item}
               removeItem={props.removeItem}
+              removeFeaturePrice={props.removeFeaturePrice}
             />
           ))}
         </ol>
@@ -36,5 +37,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { removeItem }
+  { removeItem, removeFeaturePrice }
 )(AddedFeatures);

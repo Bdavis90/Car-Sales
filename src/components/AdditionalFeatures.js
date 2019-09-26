@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import AdditionalFeature from "./AdditionalFeature";
-import { addFeature } from "../actions";
+import { addFeature, addFeaturePrice } from "../actions";
 
 const AdditionalFeatures = props => {
   return (
@@ -15,6 +15,7 @@ const AdditionalFeatures = props => {
               key={item.id}
               feature={item}
               addFeature={props.addFeature}
+              addFeaturePrice={props.addFeaturePrice}
             />
           ))}
         </ol>
@@ -34,5 +35,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { addFeature }
+  { addFeature, addFeaturePrice }
 )(AdditionalFeatures);
